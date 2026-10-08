@@ -199,6 +199,7 @@ The scanner:
 4. Analyzes two shallow, wide crop regions focused on song titles
 5. Matches recognized text against the song database
 6. Shows the best match as an inline card under the camera
+7. Shows Standard chart levels first and DX chart levels beneath them
 7. Automatically updates when another song is recognized
 8. Stops on **停止掃描** or when the modal closes
 
