@@ -230,7 +230,7 @@ Recognition languages:
 jpn+eng
 ```
 
-The current implementation creates a worker for each recognition batch and terminates it after completion.
+The live scanner keeps one persistent Tesseract worker while scanning and terminates it when the scanner closes. Frames are captured at `960×540`, cropped to title regions before OCR, and recognition exits early after a high-confidence title match.
 
 ### Text Normalization
 
