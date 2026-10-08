@@ -245,6 +245,7 @@ function normalizeText(value) {
 ```
 
 This preserves Unicode letters and numbers while removing spaces, punctuation, and symbols.
+The normalizer also maps common OCR-confused characters such as `ø` to `o`, `æ` to `ae`, `œ` to `oe`, and `ß` to `ss`.
 
 ### Song Matching
 
