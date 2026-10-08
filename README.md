@@ -1,6 +1,6 @@
 # Mai Score
 
-Mai Score is a fully static website for searching **maimai International** songs, exact chart constants, and locally stored personal scores. It also supports continuous live-camera OCR for recognizing song titles.
+Mai Score is a fully static website for searching **maimai International** songs and exact chart constants. It also supports continuous live-camera OCR for recognizing song titles.
 
 **Live site:** <https://eric-is-here.github.io/Mai-Score/>
 
@@ -10,7 +10,6 @@ Mai Score is a fully static website for searching **maimai International** songs
 - Filter by genre, version, chart type, difficulty, and exact constant
 - Show all Standard/DX charts with exact internal constants
 - Show chart version and note counts
-- Save personal scores locally in the browser
 - Search-result cards use official cover art as full-card backgrounds
 - Live-camera OCR with continuous scanning and an inline matched-song card
 - Optional image upload for offline OCR recognition
@@ -158,28 +157,6 @@ Chart filters require at least one chart to satisfy all selected conditions:
 - Difficulty
 - Exact constant
 
-## Personal Scores
-
-Scores are stored in browser `localStorage` under:
-
-```text
-mai-score-v2
-```
-
-The storage shape is:
-
-```json
-{
-  "Song Title|std|master": 987654,
-  "Song Title|dx|expert": 1000000
-}
-```
-
-- Scores are per song, chart type, and difficulty.
-- Values are integers from `0` to `1,000,000`.
-- Scores never leave the user's browser.
-- Clearing browser storage removes all saved scores.
-
 ## Cover Art
 
 Cover images are loaded on demand from:
@@ -292,8 +269,6 @@ Mai Score requires a modern browser supporting:
 
 - ES2017+
 - `dialog`
-- `localStorage`
-- Unicode property escapes
 - `fetch`
 - `ImageBitmap`
 - `MediaDevices.getUserMedia`
@@ -350,7 +325,6 @@ The current data snapshot is embedded in `index.html`. To update it:
 - OCR accuracy depends on lighting, camera focus, font, and screen glare.
 - Song covers require internet access and availability of the ArcadeSongs CDN.
 - Live OCR may be slow on low-power devices because recognition is CPU-intensive.
-- No cloud account sync; personal scores are local to the current browser.
 - The dataset is a snapshot and does not automatically update itself.
 - Some official source data may include null chart versions or note counts.
 
