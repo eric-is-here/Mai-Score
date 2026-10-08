@@ -19,7 +19,7 @@ Mai Score is a fully static website for searching **maimai International** songs
 
 - Source: [ArcadeSongs maimai](https://arcade-songs.zetaraku.dev/maimai/)
 - Region: International
-- Dataset update time: `2026-10-04 18:46:46`
+- Dataset update time in Hong Kong time: `2026-10-05 02:46:46` (`Asia/Hong_Kong`)
 - Songs: `1,491`
 - Charts: `6,128`
 - Genres: `7`
