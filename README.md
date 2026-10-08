@@ -196,7 +196,7 @@ The scanner:
 1. Opens a rear/environment camera when available
 2. Continuously captures video frames to an offscreen canvas
 3. Runs OCR repeatedly without closing the camera
-4. Analyzes four crop regions per frame
+4. Analyzes two shallow, wide crop regions focused on song titles
 5. Matches recognized text against the song database
 6. Shows the best match as an inline card under the camera
 7. Automatically updates when another song is recognized
@@ -210,7 +210,7 @@ It:
 
 1. Accepts a captured photo or screenshot
 2. Creates an `ImageBitmap`
-3. Runs the same four-crop OCR pipeline
+3. Runs the same two-crop title-focused OCR pipeline
 4. Shows up to five candidate songs
 5. Lets the user select the intended match
 
@@ -248,18 +248,18 @@ This preserves Unicode letters and numbers while removing spaces, punctuation, a
 
 Matching supports:
 
-- Exact normalized title/artist match
-- Substring match
-- Prefix match
+- Exact normalized song title match
+- Song title substring match
+- Song title prefix match
 - Bounded Levenshtein distance
 
-The bounded threshold is:
+The title-only bounded threshold is:
 
 ```js
-Math.max(1, Math.floor(target.length * 0.18))
+Math.max(1, Math.floor(title.length * 0.15))
 ```
 
-A result is accepted only when its normalized score is at least `0.7`.
+A result is accepted only when its normalized score is at least `0.75`.
 
 For image upload mode, the top five accepted candidates are shown. Live mode uses the highest-confidence candidate.
 
