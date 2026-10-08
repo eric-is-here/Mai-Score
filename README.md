@@ -196,7 +196,7 @@ The scanner:
 1. Opens a rear/environment camera when available
 2. Continuously captures video frames to an offscreen canvas
 3. Runs OCR repeatedly without closing the camera
-4. Analyzes two shallow, wide crop regions focused on song titles
+4. Analyzes one smaller crop region that exactly matches the displayed scanning box
 5. Matches recognized text against the song database
 6. Shows the best match as an inline card under the camera
 7. Shows Standard chart levels first and DX chart levels beneath them
